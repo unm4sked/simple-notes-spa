@@ -9,7 +9,7 @@ function NoteItem(props) {
                 <Card>
                     <div className={classes.content}>
                         <h3>{props.title}</h3>
-                        <p>{props.createdAt}</p>
+                        <p>created: {props.createdAt}</p>
                     </div>
                     <div className={classes.actions}>
                         <Link to={`/note/${props.id}`} state={{ id: props.id }}>
