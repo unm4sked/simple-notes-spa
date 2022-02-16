@@ -52,7 +52,7 @@ function FullNote(props) {
                     <div>Created at: {note.createdAt}</div>
                 </Typography>
                 <Typography variant="caption">
-                    <div>Created at: {note.expirationDate}</div>
+                    <div>Expired at: {note.expirationDate}</div>
                 </Typography>
                 <Typography variant="caption">
                     <div>Last updated: {note.updatedAt}</div>
