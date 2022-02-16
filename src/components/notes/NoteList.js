@@ -1,12 +1,13 @@
-import { DateTime } from "luxon";
 import NoteItem from "./NoteItem";
 import classes from "./NoteList.module.css";
+import { toReadFormat } from "../../shared/date";
 
 function NoteList(props) {
-    const data = props.notes.length ? props.notes : [
+    const data = props.notes.length
+        ? props.notes
+        : [
               {
                   attributes: {
-                      id: "1",
                       title: "No note found ¯\\_( ͡° ͜ʖ ͡°)_/¯",
                       createdAt: new Date().toISOString(),
                   },
@@ -20,7 +21,7 @@ function NoteList(props) {
                     key={note.attributes.id}
                     id={note.attributes.id}
                     title={note.attributes.title}
-                    createdAt={DateTime.fromISO(note.attributes.createdAt).toFormat("DD HH:mm:ss")}
+                    createdAt={toReadFormat(note.attributes.createdAt)}
                 />
             ))}
         </ul>

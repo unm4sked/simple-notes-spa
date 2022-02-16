@@ -11,7 +11,7 @@ function App() {
         <Layout>
             <Routes>
                 <Route path="/" element={<AllNotesPage />} />
-                <Route path="/note" element={<NotePage />} />
+                <Route path="/note/:noteId" element={<NotePage />} />
                 <Route path="/new-note" element={<NewNotePage />} />
             </Routes>
         </Layout>

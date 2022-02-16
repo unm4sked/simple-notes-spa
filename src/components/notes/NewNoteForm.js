@@ -7,20 +7,20 @@ function NewMeetupForm(props) {
     const titleInputRef = useRef();
     const textInputRef = useRef();
     const passwordInputRef = useRef();
-    const expiredAtInputRef = useRef();
+    const expirationDateInputRef = useRef();
 
     const submitNoteHandler = (event) => {
         event.preventDefault();
         const title = titleInputRef.current.value;
         const text = textInputRef.current.value;
         const password = passwordInputRef.current.value;
-        const expiredAt = expiredAtInputRef.current.value || undefined;
+        const expirationDate = expirationDateInputRef.current.value || undefined;
 
         const noteData = {
             title,
             text,
             password,
-            expiredAt,
+            expirationDate,
         };
 
         props.onAddNote(noteData)
@@ -52,8 +52,8 @@ function NewMeetupForm(props) {
                     />
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor="expiredAt">Expired at</label>
-                    <input type="datetime-local" id="expiredAt" ref={expiredAtInputRef} />
+                    <label htmlFor="expirationDate">Expired at</label>
+                    <input type="datetime-local" id="expirationDate" ref={expirationDateInputRef} />
                 </div>
                 <div className={classes.actions}>
                     <button>Add</button>
