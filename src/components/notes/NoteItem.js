@@ -9,6 +9,9 @@ function NoteItem(props) {
                     <h3>{props.title}</h3>
                     <p>{props.createdAt}</p>
                 </div>
+                <div className={classes.actions}>
+                    <button>Show full note</button>
+                </div>
             </Card>
         </li>
     );

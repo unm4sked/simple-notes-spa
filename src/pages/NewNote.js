@@ -8,11 +8,14 @@ function NewNotePage() {
 
     const addNoteHandler = (noteData) => {
         axios
-            .post("http://localhost:4040/dev/notes", noteData, {
-                headers: { "Content-Type": "application/json",  },
+            .post(`${process.env.REACT_APP_API_URL}/notes`, noteData, {
+                headers: { "Content-Type": "application/json" },
             })
             .then((res) => console.log(res))
-            .then(() => {navigate("/")});
+            .then(() => {
+                navigate("/");
+            })
+            .catch((e) => console.log(e));
     };
 
     return (
